@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat-Bold"), url(http://localhost:3000/fonts/Montserrat-Bold.ttf) format("ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat-SemiBold"), url(http://localhost:3000/fonts/Montserrat-SemiBold.ttf) format("ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat-Medium"), url(http://localhost:3000/fonts/Montserrat-Medium.ttf) format("ttf");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat-Regular"), url(http://localhost:3000/fonts/Montserrat-Regular.ttf) format("ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat-Light"), url(http://localhost:3000/fonts/Montserrat-Light.ttf) format("ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @import "Extensions";
+    @import "variables/colors";
+    height: 100vh;
+    margin: 0;
+    font-size: 16px;
+    font-family: Montserrat, sans-serif !important;
+    background: $border-color-light_prim;
+    .app-container {
+        @include flex;
+        @include flex-center;
+        @include flex-flow(column nowrap);
+        & > *[class*="page"] {
+            background: $white;
+            padding: 75px;
+        }
+    }
+}
