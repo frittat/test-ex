@@ -31,7 +31,6 @@ module.exports = {
         }
     },
     plugins: [
-        new BundleAnalyzerPlugin(),
         new webpack.ProgressPlugin(),
         new webpack.ProvidePlugin({
             process: "process/browser"
