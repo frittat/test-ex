@@ -102,10 +102,17 @@ const Main = () => {
                                                         {moment(val.publishedAt).format("MMM Do, YYYY")}
                                                     </Typography>
                                                     <CardContent className="card-content">
-                                                        <Typography variant="h5" component="div" className="card-header">
-                                                            {val.title}
-                                                        </Typography>
-                                                        <Highlighter highlightClassName="highlight" searchWords={keywords} autoEscape={true} textToHighlight={`${val.summary.substring(0, 100)}...`} />
+                                                        <Box className="card-header">
+                                                            <Highlighter highlightClassName="highlight" searchWords={keywords} autoEscape={true} textToHighlight={val.title} />
+                                                        </Box>
+                                                        <Box>
+                                                            <Highlighter
+                                                                highlightClassName="highlight"
+                                                                searchWords={keywords}
+                                                                autoEscape={true}
+                                                                textToHighlight={`${val.summary.substring(0, 100)}...`}
+                                                            />
+                                                        </Box>
                                                     </CardContent>
                                                 </div>
                                             </div>
