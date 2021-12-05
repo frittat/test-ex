@@ -41,10 +41,10 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: "./public/manifest.json", to: "manifest.json" },
-                { from: "./public/fonts", to: "fonts" },
-                { from: "./public/robots.txt", to: "robots.txt" },
-                { from: "./public/manifest-icons", to: "manifest-icons" },
+                { from: __dirname + "./public/manifest.json", to: "manifest.json" },
+                { from: __dirname + "./public/fonts", to: "fonts" },
+                { from: __dirname + "./public/robots.txt", to: "robots.txt" },
+                { from: __dirname + "./public/manifest-icons", to: "manifest-icons" },
                 { from: "./src/server.js", to: "server.js" },
                 { from: "./src/sw.js", to: "sw.js" }
             ]
