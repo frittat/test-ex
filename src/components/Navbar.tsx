@@ -38,7 +38,7 @@ const Navbar = () => {
                     <img src={searchGlass} alt="" className={`search-bar-icon${animateIcon ? " animate" : ""}`} width={20} height={20} />
                     <Input type="text" className="search-bar-input" onChange={onInputChange} value={keywords} />
                     {!!keywords.length && (
-                        <Button onClick={onClear} aria-label="Clear input">
+                        <Button onClick={onClear} aria-label="Clear input" className="clear-btn">
                             <img src={cross} alt="" width={20} height={20} />
                         </Button>
                     )}

@@ -55,6 +55,13 @@
             border: none !important;
         }
     }
+    .clear-btn {
+        color: $main;
+        padding: 16px 8px;
+        &:hover {
+            background-color: $main100;
+        }
+    }
     @include keyframes(spin) {
         100% {
             @include transform(rotate(360deg));
