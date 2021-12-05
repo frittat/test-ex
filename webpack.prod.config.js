@@ -39,6 +39,16 @@ module.exports = {
             swSrc: "./src/sw.js",
             swDest: "sw.js"
         }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: "./public/manifest.json", to: "manifest.json" },
+                { from: "./public/fonts", to: "fonts" },
+                { from: "./public/robots.txt", to: "robots.txt" },
+                { from: "./public/manifest-icons", to: "manifest-icons" },
+                { from: "./src/server.js", to: "server.js" },
+                { from: "./src/sw.js", to: "sw.js" }
+            ]
+        }),
         new CompressionPlugin({
             filename: "[name][ext].br",
             algorithm: "brotliCompress",
@@ -52,16 +62,6 @@ module.exports = {
             // threshold: 10240,
             minRatio: 0.8,
             deleteOriginalAssets: true
-        }),
-        new CopyWebpackPlugin({
-            patterns: [
-                { from: "./public/manifest.json", to: "manifest.json" },
-                { from: "./public/fonts", to: "fonts" },
-                { from: "./public/robots.txt", to: "robots.txt" },
-                { from: "./public/manifest-icons", to: "manifest-icons" },
-                { from: "./src/server.js", to: "server.js" },
-                { from: "./src/sw.js", to: "sw.js" }
-            ]
         }),
         new MiniCssExtractPlugin({
             filename: "[name].css",
