@@ -1,12 +1,13 @@
 {
-    "name": "FrontendTest",
-    "short_name": "frnt",
+    "name": "Frontend Test",
+    "short_name": "test",
     "theme_color": "#7400b8",
     "background_color": "#ebebeb",
     "display": "standalone",
     "orientation": "any",
     "scope": "/",
     "start_url": "/",
+    "id": "/",
     "incognito": "spanning",
     "version": "0.1",
     "omnibox": {
@@ -15,7 +16,7 @@
     "developer": {
         "name": "Sergey Smovzh"
     },
-    "homepage_url": "https://chatizze.herokuapp.com",
+    "homepage_url": "http://localhost:3000",
     "icons": [
         {
             "src": "manifest-icons/icon-48x48.png",
@@ -60,11 +61,6 @@
         {
             "src": "manifest-icons/icon-512x512.png",
             "sizes": "512x512",
-            "type": "image/png"
-        },
-        {
-            "src": "manifest-icons/icon.png",
-            "sizes": "1024x1024",
             "type": "image/png"
         }
     ]

@@ -1,6 +1,6 @@
 ## Installing App
 
-1. Clone this repository `git clone https://github.com/S-Sergio-A/сщвуикшвпу`.
+1. Clone this repository `git clone https://github.com/S-Sergio-A/codebridge`.
 2. Install dependencies.
 
 ```javascript

@@ -1,8 +1,11 @@
-import { Component, ErrorInfo } from "react";
-import { Box, Link } from "@mui/material";
+import React, { Component, ErrorInfo } from "react";
+import { Box, Link, Typography } from "@mui/material";
 import Head from "./Head";
+import constants from "../helpers/constants";
 
-// import "../../assets/scss/pages/Error.scss";
+import notFound from "../assets/img/notFound.svg";
+
+import "../assets/scss/pages/Error.scss";
 
 interface ErrorBoundaryProps {
     [key: string]: any;
@@ -26,12 +29,17 @@ class ErrorBoundary extends Component {
         // @ts-ignore
         if (this.state.hasError) {
             return (
-                <Box sx={{ display: "flex", justifyContent: "space-around", alignItems: "center", flexDirection: "column", flexWrap: "nowrap" }}>
-                    <Head title="Error" description="Ooops... Something unexpected has happen!" />
-                    <h1 className="error-header">Ooops... Something unexpected has happen!</h1>
-                    <Link href="/" underline="hover" className="error-btn">
-                        To the homepage
-                    </Link>
+                <Box className="error-page">
+                    <Head title={constants.unexpectedError.text} description={constants.unexpectedError.text} />
+                    <Typography variant="h1" className="error-header">
+                        {constants.unexpectedError.header}
+                    </Typography>
+                    <img src={notFound} alt={constants.unexpectedError.text} width="100%" height="400" className="error-img" />
+                    <Box className="error-link-container">
+                        <Link href="/" underline="none" className="error-link">
+                            To the homepage
+                        </Link>
+                    </Box>
                 </Box>
             );
         }

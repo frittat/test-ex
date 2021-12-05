@@ -1,0 +1,20 @@
+.modal {
+    @import "../Extensions";
+    @import "../colors";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    width: 300px;
+    height: 100px;
+    padding: 20px;
+    border: 2px solid $error100;
+    background-color: $white;
+    &-header {
+        text-align: center;
+        font-weight: 700;
+    }
+    &-text {
+        color: $text;
+    }
+}

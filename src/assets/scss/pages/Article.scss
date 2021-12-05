@@ -1,0 +1,87 @@
+.article-page {
+    @import "../Extensions";
+    @import "../colors";
+    @include flex;
+    @include flex-flow(column nowrap);
+    @include justify-content(start);
+    height: 100%;
+    background: $white;
+    @media (min-width: 1200px) {
+        width: 1200px;
+    }
+    @media (min-width: 1440px) {
+        width: 1440px;
+    }
+    .article-container {
+        @include flex;
+        @include flex-flow(column nowrap);
+        position: relative;
+        top: -100px;
+        padding: 20px 15px 35px;
+        background: $white;
+        @include box-sizing(border-box);
+        @include border-radius(5px);
+        border: 1px solid $border;
+        @include box-shadow(0 8px 24px rgba(0, 0, 0, 0.05));
+        z-index: 100;
+        @media (min-width: 768px) {
+            padding: 20px 35px 35px;
+        }
+        @media (min-width: 1200px) {
+            left: 5px;
+            width: 1190px;
+            padding: 20px 45px 35px;
+        }
+        @media (min-width: 1440px) {
+            left: 75px;
+            width: 1290px;
+            padding: 20px 75px 35px;
+        }
+        .article-title {
+            margin-block: 35px 50px;
+            font-size: 24px;
+            text-align: center;
+        }
+        .article-paragraph {
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+    }
+    .return-link-container {
+        padding: 20px 15px 35px;
+        margin-top: -55px;
+        @media (min-width: 768px) {
+            padding: 0 35px 35px;
+        }
+        @media (min-width: 1200px) {
+            padding: 0 45px 35px;
+        }
+        @media (min-width: 1440px) {
+            padding: 0 75px 35px;
+        }
+        .return-link {
+            color: $text;
+            font-weight: 700;
+        }
+        .arrow-reverse {
+            @include transform(scale(-1, -1));
+        }
+        &:hover .arrow-reverse {
+            @include animation(slide-back 1000ms ease forwards);
+        }
+    }
+    @include keyframes(slide-back) {
+        10% {
+            @include transform(translateX(-10px) scale(-1, -1));
+        }
+        30% {
+            @include transform(translateX(-5px) scale(-1, -1));
+        }
+        50% {
+            @include transform(translateX(-10px) scale(-1, -1));
+        }
+        100% {
+            @include transform(translateX(-0px) scale(-1, -1));
+        }
+    }
+}

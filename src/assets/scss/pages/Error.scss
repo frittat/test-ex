@@ -1,0 +1,41 @@
+.error-page {
+    @import "../colors";
+    @import "../Extensions";
+    @include flex;
+    @include flex-flow(column nowrap);
+    @include justify-content(space-between);
+    width: 100vw;
+    height: 100vh;
+    padding: 0 15px 20px;
+    @include box-sizing(border-box);
+    @media (min-width: 1200px) {
+        width: 1100px;
+        padding-bottom: 20px;
+    }
+    @media (min-width: 1440px) {
+        width: 1290px;
+        padding: 0 75px 40px;
+    }
+    .error-header {
+        margin-block: 60px 30px;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 600;
+    }
+    .error-link-container {
+        @include flex;
+        @include flex-center;
+    }
+    .error-link {
+        padding: 20px 40px;
+        margin-block: 20px 40px;
+        font-size: 20px;
+        border: 1px solid $border;
+        @include border-radius(5px);
+        background: $error100;
+        color: $white;
+        &:hover {
+            background: $error;
+        }
+    }
+}

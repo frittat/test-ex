@@ -1,0 +1,71 @@
+.search-bar {
+    @import "../Extensions";
+    @import "../colors";
+    @include flex;
+    @include flex-flow(row nowrap);
+    @include justify-content(space-between);
+    @include align-items(center);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 20px 15px;
+    @include box-sizing(border-box);
+    background: $white;
+    z-index: 901;
+    @include transition(0.25);
+    @media (min-width: 1200px) {
+        width: 1170px;
+        padding: 40px 45px;
+    }
+    @media (min-width: 1440px) {
+        width: 1440px;
+        padding: 50px 75px 30px;
+    }
+    &.scrolled {
+        @include box-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+    }
+    &-label {
+        color: $text;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    &-container {
+        @include flex;
+        @include align-items(center);
+        @include justify-content(start);
+        max-width: 600px;
+        padding-left: 20px;
+        margin-block: 10px;
+        border: 1px solid $border;
+        @include box-shadow(0 0 24px rgba(0, 0, 0, 0.05));
+        @include border-radius(5px);
+    }
+    &-icon {
+        margin-right: 20px;
+        &.animate {
+            @include animation(600ms ease-in-out spin forwards, 600ms 650ms ease-in-out scale forwards);
+        }
+    }
+    &-input {
+        height: 52px;
+        width: 540px;
+        font-size: 16px;
+        &::before,
+        &::after {
+            border: none !important;
+        }
+    }
+    @include keyframes(spin) {
+        100% {
+            @include transform(rotate(360deg));
+        }
+    }
+    @include keyframes(scale) {
+        0% {
+            @include transform(scale(2));
+        }
+        100% {
+            @include transform(scale(1));
+        }
+    }
+}
